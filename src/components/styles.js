@@ -40,3 +40,64 @@ export const styles = StyleSheet.create({
     width: 80,
   },
 });
+
+export const cardstyle = StyleSheet.create({
+  centeredView: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    marginTop: 22,
+  },
+  modalView: {
+    margin: 20,
+    backgroundColor: "white",
+    borderRadius: 20,
+    padding: 35,
+    alignItems: "center",
+    shadowColor: "#000",
+    width: 400,
+    height: 700,
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 4,
+    elevation: 5,
+  },
+  modelcardImage: {
+    height: 250,
+    width: 150,
+  },
+  button: {
+    borderRadius: 20,
+    padding: 10,
+    elevation: 2,
+  },
+  buttonOpen: {
+    backgroundColor: "#F194FF",
+  },
+  buttonClose: {
+    backgroundColor: "#2196F3",
+  },
+  textStyle: {
+    color: "white",
+    fontWeight: "bold",
+    textAlign: "center",
+  },
+  modalProfile: {
+    fontSize: 20,
+    marginVertical: 16,
+    fontWeight: "bold",
+  },
+  modalTextHeading: {
+    fontSize: 20,
+    marginVertical: 8,
+    fontWeight: "bold",
+  },
+  modalText: {
+    marginVertical: 8,
+    textAlign: "center",
+    fontSize: 20,
+  },
+});
