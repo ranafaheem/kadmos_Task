@@ -1,8 +1,19 @@
 import "react-native-gesture-handler";
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import React, { createContext, useState } from "react";
 import MainScreen from "./src/MainScreen";
+import translations from "./src/languages/translations";
+
+export const GlobalLanguage = createContext();
 
 export default function App() {
-  return <MainScreen></MainScreen>;
+  // Set Default Language English
+  const [lang, setLang] = useState({
+    language: "Eng",
+    translations: translations.Eng,
+  });
+  return (
+    <GlobalLanguage.Provider value={{ appLang: lang, setLang }}>
+      <MainScreen></MainScreen>
+    </GlobalLanguage.Provider>
+  );
 }

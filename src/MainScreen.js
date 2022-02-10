@@ -1,19 +1,27 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer } from "@react-navigation/native";
-import React from "react";
+import React, { useState, useContext } from "react";
 import UsersScreen from "./navigationScreen/UsersScreen";
 import SettingsScreen from "./navigationScreen/SettingsScreen";
 import { Ionicons } from "@expo/vector-icons";
 
+import { GlobalLanguage } from "../App";
+
 const Tab = createBottomTabNavigator();
-// Screen Names
-const usersName = "Users";
-const settingsName = "Settings";
+
 export default function MainScreen() {
+  const { appLang } = useContext(GlobalLanguage);
+  console.log("this is Mainscreen", appLang);
+  // Screen Names
+  let usersName = "Users";
+  let settingsName = "Settings";
+  usersName = appLang.translations.Users;
+  settingsName = appLang.translations.Setting;
+
   return (
     <NavigationContainer>
       <Tab.Navigator
-        initialRouteName={usersName}
+        initialRouteName={"Users"}
         screenOptions={({ route }) => ({
           tabBarIcon: ({ focused, color, size }) => {
             let iconName;
